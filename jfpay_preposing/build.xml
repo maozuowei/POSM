@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+@author L7
+@version $Revision: 1.0 $ $Date: 2015-03-19 11:51:54 $
+-->
+<project name="jfpay_preposing" basedir="." default="build">
+
+	<property name="war.name" value="jfpay_prepo" />
+	<property name="webapp.dir" value="${basedir}/WebRoot" />
+	<property name="build.dir" value="${basedir}/build" />
+
+	<target name="build">
+		<delete file="${build.dir}/${war.name}.war" />
+		<war warfile="${build.dir}/${war.name}.war" webxml="${webapp.dir}/WEB-INF/web.xml">
+			<fileset dir="${webapp.dir}" excludes="**/*.jar" />
+		</war>
+	</target>
+
+</project>
